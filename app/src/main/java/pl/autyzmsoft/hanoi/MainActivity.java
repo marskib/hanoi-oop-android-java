@@ -6,8 +6,8 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
     static int movesToEnd; //remaining number of moves
-    static boolean czySpowalniac;
-    static int waitTime;
+    static boolean czySpowalniac = true;
+    static int waitTime = 500;
 
     static Tower towerC;
     static Tower towerA;
@@ -63,19 +63,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_land);
 
+        //moj algorytm ponizej:
         Console.Clear();
         Console.CursorVisible = false;
 
         //Number of disks:
-        int n = 5  ;
+        int n = 3  ;
         //
         movesToEnd = TotalMoves(n);
         Console.WriteLine("Liczba krążków: " + n);
         Console.Write("Do wykonania ruchow: " + movesToEnd);
         Utilities.gotoXY(0, 1);
         Console.Write("Pozostalo:           " + movesToEnd);
-        czySpowalniac = true;
-        waitTime = 2000;
         //
         towerA = new Tower(Utilities.kA);
         towerB = new Tower(Utilities.kB);
