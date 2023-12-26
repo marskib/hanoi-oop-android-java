@@ -3,6 +3,8 @@ package pl.autyzmsoft.hanoi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
     static int movesToEnd; //remaining number of moves
@@ -68,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         Console.CursorVisible = false;
 
         //Number of disks:
-        int n = 2  ;
+        int n = 5  ;
         //
         movesToEnd = TotalMoves(n);
         Console.WriteLine("Liczba krążków: " + n);
@@ -84,6 +86,16 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < n; i++)
         {
             towerA.PutDisk(new Disk(i));
+
+            //moje na Android - 2023.12.26, proby:
+
+            Button btn = new Button(this);
+            LinearLayout linearLayout = (LinearLayout) findViewById(R.id.tower_A);
+            linearLayout.addView(btn);
+
+
+            //moje - proby - koniec
+
         }
         //
         Utilities.gotoXY(Utilities.kA, Utilities.Wd + 1); Console.Write('A');
@@ -97,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         Utilities.gotoXY(0, Utilities.Wd + 4);
         Console.WriteLine("                                        ");
         //
-        Hanoi(n, towerA, towerC, towerB);
+        //Hanoi(n, towerA, towerC, towerB);
         //
         //odstep pod rysunkiem:
         Utilities.gotoXY(Utilities.kA, Utilities.Wd + 5);
