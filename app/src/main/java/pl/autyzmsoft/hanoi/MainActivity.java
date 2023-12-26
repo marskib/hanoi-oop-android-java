@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         Console.CursorVisible = false;
 
         //Number of disks:
-        int n = 3  ;
+        int n = 2  ;
         //
         movesToEnd = TotalMoves(n);
         Console.WriteLine("Liczba krążków: " + n);
