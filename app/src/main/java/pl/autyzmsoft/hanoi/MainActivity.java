@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         int n = 5  ;
         //
         movesToEnd = TotalMoves(n);
+        Console.WriteLine("Liczba krążków: " + n);
         Console.Write("Do wykonania ruchow: " + movesToEnd);
         Utilities.gotoXY(0, 1);
         Console.Write("Pozostalo:           " + movesToEnd);
